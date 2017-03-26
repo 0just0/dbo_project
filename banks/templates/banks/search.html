@@ -1,0 +1,71 @@
+{% extends "layout.html" %} {% load static %} {% block content %}
+
+<div class="container">
+    <h1>Выберите наиболее важные для Вас критерии:</h1>
+    <div class="row">
+        <form action="{% url 'banks:search' %}" method="POST">{% csrf_token %}
+            <div class="row">
+                <div class=" col s6">
+                    <p>
+                        <input type="checkbox" id="0" name="0" />
+                        <label for="0">Цена</label>
+                        <small>(Плата за подключение, обслуживание, комиссия за переводы, прочее)</small>
+                    </p>
+                    <p>
+                        <input type="checkbox" id="1" name="1" />
+                        <label for="1">Безопасность</label>
+                        <small>(Уровень защиты)</small>
+                    </p>
+                    <p>
+                        <input type="checkbox" id="2" name="2" />
+                        <label for="2">Предоставление информации</label>
+                        <small>(Выписки, справки)</small>
+                    </p>
+                    <p>
+                        <input type="checkbox" id="3" name="3" />
+                        <label for="3">Возможность оплачивать услуги</label>
+                        <small>(Мобильная связь, ЖКХ, Интернет, прочее)</small>
+                    </p>
+                    <p>
+                        <input type="checkbox" id="4" name="4" />
+                        <label for="4">Доступ к дополнительным услугам</label>
+                        <small>(Покупка Ж/Д билетов, бронирование отелей, благотворительность)</small>
+                    </p>
+                </div>
+
+                <div class=" col s6">
+                    <p>
+                        <input type="checkbox" id="5" name="5" />
+                        <label for="5">Возможность совершать вклады</label>
+                    </p>
+                    <p>
+                        <input type="checkbox" id="6" name="6" />
+                        <label for="6">Возможность совершать переводы</label>
+                        <small>(На счета в другие банки, на свои счета)</small>
+                    </p>
+                    <p>
+                        <input type="checkbox" id="7" name="7" />
+                        <label for="7">Управление счетами</label>
+                        <small>(Конвертация валюты, установление лимитов и шаблонов, прочее)</small>
+                    </p>
+                    <p>
+                        <input type="checkbox" id="8" name="8" />
+                        <label for="8">Возможность общения с банком</label>
+                        <small>(СМС информирование, отзывы, онлайн-приложение, мобильный банкинг)</small>
+                    </p>
+                    <p>
+                        <input type="checkbox" id="9" name="9" />
+                        <label for="9">Доступность</label>
+                        <small>(Количество банкоматов)</small>
+                    </p>
+                </div>
+
+            </div>
+            <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                            <i class="material-icons right">send</i>
+                        </button>
+        </form>
+    </div>
+</div>
+
+{% endblock content %}

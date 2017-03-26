@@ -1,0 +1,17 @@
+{% extends "layout.html" %} {% block content %}
+
+<div class="container">
+    <ul class=" results collapsible popout" data-collapsible="accordion">
+        {% for bank in dcs_banks %}
+
+        <li>
+            <div class="collapsible-header">
+                {{ forloop.counter }} -- {{ bank.1 }}
+            </div>
+            <div class="collapsible-body"><span>{{ bank.2|linebreaks }}</span></div>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+
+{% endblock content %}
